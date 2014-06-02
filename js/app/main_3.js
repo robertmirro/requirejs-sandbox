@@ -11,7 +11,11 @@ define(["jquery"], function ($) {
     //print(messages.getHello());
 
     console.log('inside main_3.js...\njQuery:\n%O', $);
-    $('#message').html('<h4>Message returned via jQuery from main_3.js...</h4>');
+
+    $(function () {
+		$('#message').html('<h4>Message returned via jQuery from main_3.js on domready event...</h4>');
+	});
+
 
     return {
 		name: "main_3.js",
