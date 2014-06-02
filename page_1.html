@@ -4,6 +4,12 @@
         <script data-main="app_1" src="js/lib/require-2.1.13.js"></script>
     </head>
     <body>
-        <h1>RequireJS 1</h1>
+        <h1>RequireJS - 1</h1>
+
+        <ul>
+			<li>data-main used to set baseUrl: ./app_1.js</li>
+			<li>app_1.js includes requirejs.config and then requires(app/main_1.js)</li>
+			<li>app/main_1: no dependancies, just define() a module that returns nothing</li>
+        </ul>
     </body>
 </html>
