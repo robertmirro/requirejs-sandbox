@@ -14,6 +14,6 @@ console.log('inside app_3.js...');
 // Start loading the main app file. Put all of
 // your application logic in there.
 requirejs(['app/main_3'], function(main3) {
-	console.log('inside app_3.js: main3.message: %s\n%O', main3.message, main3);
+	console.log('inside app_3.js: main3.message: %s\nmain3.getMessage: %s\n%O', main3.message, main3.getMessage(), main3);
 	}
 );
