@@ -7,9 +7,10 @@
         <h1>RequireJS - 1</h1>
 
         <ul>
-			<li>data-main used to set baseUrl: ./app_1.js</li>
-			<li>app_1.js includes requirejs.config and then requires(app/main_1.js)</li>
-			<li>app/main_1: no dependancies, just define() a module that returns nothing</li>
+			<li>data-main used to set baseUrl: <b>./app_1.js</b></li>
+			<li>app_1.js <b>includes requirejs.config</b> to reset baseUrl to <b>"js/lib"</b> and
+				set "app" path to <b>"../app"</b> and then <b>require(app/main_1.js)</b> and does not expect a module returned</li>
+			<li>app/main_1.js: no dependancies, just <b>define()</b> a module that returns nothing</li>
         </ul>
     </body>
 </html>
