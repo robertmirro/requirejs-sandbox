@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script data-main="app_7" src="js/lib/require-2.1.13.js"></script>
+    </head>
+    <body>
+        <h1>RequireJS - 7</h1>
+
+        <ul>
+            <li>Switch to <b>CDN</b> versions for libraries with local backup (also testing credential cache)</li>
+            <li>data-main used to set baseUrl: <b>./app_7.js</b></li>
+			<li>app_7.js <b>includes requirejs.config</b> to reset baseUrl to <b>"js/lib"</b>,
+				set "app" path to <b>"../app"</b>, add <b>"jquery"</b> AND <b>underscore</b> to path and then
+				<b>require(app/main_7.js)</b> and is returned a module reference. Can see both of these .js
+				files loaded asyncronously via devtools network waterfall</li>
+			<li><b>NOTE:</b> <u>had to include js/lib/underscore-min.map in order to allow Chrome to load source
+				map for minified underscore.js</u> (the source map file was showing as not loading in the network
+				waterfall because JS source maps are enabled in Chrome by default)</li>
+			<li>app/main_7.js: use require() for dependency on jQuery [<i>why does "require" need to be
+				passed to main_7.js inside of "define()" and what does "require()" need to be used to
+				require jQuery as opposed to requirejs()?</i>], <b>define()</b> a module that returns
+				an <b><u>FUNCTION</u></b>, use jQuery to manipulate page</li>
+        </ul>
+
+        <div id="message"></div>
+    </body>
+</html>
