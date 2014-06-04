@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <script>
+            var require = {
+                baseUrl: 'js/lib',
+                paths: {
+                    app: '../app',
+                    jquery: [
+                        'http://code.jquery.com/jquery-2.1.1.min',
+                        'jquery-2.1.1.min'
+                    ],
+                    underscore: [
+                        'http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min',
+                        'underscore-1.6.0-min'
+                    ]
+                }
+                ,shim : {
+                    underscore : {
+                        exports : "_"
+                    }
+                },
+                deps: ['app/main_10'],
+                callback: function(main10) {
+                    console.log('inside app_10.js: main10() FUNCTION: %s => %O', main10(), main10);
+                }
+            };
+
+            console.log('inside page_10.html... loading...');
+
+        </script>
+
+        <script src="js/lib/require-2.1.13.js"></script>
+
+    </head>
+    <body>
+        <h1>RequireJS - 10</h1>
+
+        <ul>
+            <li><b>Do not use data-main</b> Entry Point to invoke RequireJS config and/or app logic</li>
+            <li>Use local require.config() in &lt;script&gt; to configure RequireJS and invoke app logic <b>BEFORE</b> require.js is loaded by defining a &quot;require&quot; global var</li>
+        </ul>
+
+        <div id="message"></div>
+
+    </body>
+</html>
