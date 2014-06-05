@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>RequireJS - 11</h1>
+
+        <ul>
+            <li>load require.js outside of body tag, require() modules outside of body tag</li>
+            <li>do <b>not</b> use data-main entry point to load require config settings</li>
+            <li>use require() to ensure config settings are loaded and then invoke page specific js module(s)</li>
+        </ul>
+
+        <div id="message"></div>
+    </body>
+
+    <script src="js/lib/require-2.1.13.js"></script>
+    <script>
+        require(['js/config_11'], function(config) {
+            console.log('inside page_11.html... config_11.js is loaded.');
+            console.log('inside page_11.html... requirejs.s.contexts._.config.baseUrl: ', requirejs.s.contexts._.config.baseUrl );
+
+            // Start loading the main app file. Put all of
+            // your application logic in there.
+            requirejs(['app/main_11'], function(main11) {
+                console.log('inside page_11.html: main11() FUNCTION: %s => %O', main11(), main11);
+                }
+            );
+        });
+
+    </script>
+</html>
